@@ -40,6 +40,7 @@ class CoursesClient(APIClient):
     """
     Клиент для работы с /api/v1/courses
     """
+
     def get_courses_api(self, query: GetCoursesQueryDict) -> Response:
         """
         Метод получения списка курсов.
