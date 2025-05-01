@@ -6,7 +6,7 @@ from clients.api_clients import APIClient
 from clients.public_http_builder import get_public_http_client
 
 
-class Token(TypedDict):  # Добавили структуру с токенами аутентификации
+class Token(TypedDict):
     """
     Описание структуры аутентификационных токенов.
     """
@@ -23,7 +23,7 @@ class LoginRequestDict(TypedDict):
     password: str
 
 
-class LoginResponseDict(TypedDict):  # Добавили структуру ответа аутентификации
+class LoginResponseDict(TypedDict):
     """
     Описание структуры ответа аутентификации.
     """
@@ -60,10 +60,9 @@ class AuthenticationClient(APIClient):
         """
         return self.post("/api/v1/authentication/refresh", json=request)
 
-    # Добавили метод login
     def login(self, request: LoginRequestDict) -> LoginResponseDict:
-        response = self.login_api(request)  # Отправляем запрос на аутентификацию
-        return response.json()  # Извлекаем JSON из ответа
+        response = self.login_api(request)
+        return response.json()
 
 
 def get_authentication_client() -> AuthenticationClient:

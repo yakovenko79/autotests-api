@@ -45,7 +45,7 @@ class CreateCourseRequestDict(TypedDict):
     minScore: int
     description: str
     estimatedTime: str
-    previewField: str
+    previewFileId: str
     createdByUserId: str
 
 
